@@ -1,3 +1,53 @@
 body { 
-    background: blue;
+    background: #f0f0f0;
+}
+Body { 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+h1 {
+    text-align: center;
+}
+h2 { 
+    text-align: center;
+}
+div { 
+    text-align: center;
+}
+H1{ 
+    padding-top: 50px;
+}
+div{ 
+    padding-left: 125px;
+}
+div{ 
+    padding-right: 125px;
+}
+div{ 
+    font-size: xx-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:#3c3c3c;
+}
+img { 
+    border-style: solid;
+    border-radius: 10px;
+}
+h3{ 
+    font-size: larger;
+}
+h1 { 
+    font-size: 80px;
+    color: #3c3c3c;
+}
+h2 { 
+    font-size: 45px;
+    color: #787878;
+}
+h1 { 
+    background-image: url();
+}
+
+div { 
+    border-style: dotted;
+    border-radius: 15px;
+    border-color: lavenderblush;
 }
