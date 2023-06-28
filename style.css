@@ -30,6 +30,8 @@ div{
 img { 
     border-style: solid;
     border-radius: 10px;
+    height: 300px;
+    width: 400px
 }
 h3{ 
     font-size: larger;
