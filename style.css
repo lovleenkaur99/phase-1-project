@@ -1,55 +1,71 @@
 body { 
-    background: #ffffff;
-}
-Body { 
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-h1 {
-    text-align: center;
-}
-h2 { 
-    text-align: center;
-}
-div { 
-    text-align: center;
-}
-H1{ 
-    padding-top: 50px;
-}
-div{ 
-    padding-left: 125px;
-}
-div{ 
-    padding-right: 125px;
-}
-div{ 
-    font-size: xx-large;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color:#3c3c3c;
-}
-img { 
-    border-style: solid;
-    border-radius: 10px;
-    height: 300px;
-    width: 400px
-}
-h3{ 
-    font-size: larger;
-}
-h1 { 
-    font-size: 80px;
-    color: #3c3c3c;
-}
-h2 { 
-    font-size: 45px;
-    color: #787878;
-}
-h1 { 
-    background-image: url();
+  background-color: black;
 }
 
-div { 
-    border-style: dotted;
-    border-radius: 15px;
-    border-color: lavenderblush;
+h1 { 
+  color :antiquewhite;
+  font-size: 80px;
+  text-align: center;
 }
+
+img { 
+  width: 200px;
+  height: 175px;
+  border: 15px solid white;
+  padding: 35px;
+  margin: 20px;
+}
+
+.name { 
+  color: whitesmoke;
+  text-align: center;
+  font-size: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  ;
+}
+
+.description { 
+  color: white;
+  text-align: center;
+  padding-left: 150px;
+  padding-right: 150px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+  font-size: 25px;
+}
+
+.detail-image { 
+  float: right;
+  width: 200px;
+  height: 200px;
+
+}
+
+input[type=submit] {
+  width: 150px;
+  
+  
+  
+  cursor: pointer;
+  
+}
+
+#new-comment { 
+  width: 200px;
+  height: 100px;
+  padding: 16px 32px
+}
+
+h3 { 
+  color: whitesmoke;
+  font-size: 40px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: left;
+}
+
+
+
+/*
+box-sizing: border-box;
+transition: all 0.3s;
+*/

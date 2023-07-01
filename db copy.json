@@ -1,45 +1,59 @@
 { 
     "restaurants": [ 
+        {
+            "BESU": 
                 {
                     "id": 1,
-                    "term": "BESU",
                     "title": "Beyond Sushi",
                     "image": "https://beyondsushi.com/wp-content/uploads/2021/03/37th-st-e1615478165797.jpg" ,
-                    "comment": " ",
+                    "link": "https://beyondsushi.com/",
                     "description" : "Beyond Sushi has some really delicious dishes. They offer variety of vegan sushi and other items in their menu. Their Fried Chick'n Bao is one of my pesonal Favorite dish. Their employees are quite helping and friendly."
-                },
+                }
+        },
+        { 
+            "HANG": [ 
                 {
                     "id": 2,
-                    "term": "HANG",
                     "title": "HanGawi",
                     "image": "https://pyxis.nymag.com/v1/imgs/a0c/1d3/a6cbb7c699d2758a18b5385ce828a8cfc2-hangawi-01.rsocial.w1200.jpg",
-                    "comment": " ",
+                    "link": "https://www.jajajamexicana.com/",
                     "description": "HanGawi is a Korean vegan restaurant. Their atmosphere is one most different then any other restaurants, that I have experienced. They offer variety of traditional teas and dishes. If someone goes to the restaurant for the first or do not have enough knowledge about their food, the staff is more than welcome to ask fo recommendation. HanGawi is quite popular, so reservation is recommended."
-                },
+                }
+            ]
+        },
+        { 
+            "JAJA": [
                 { 
                     "id": 3,
-                    "term": "JAJA",
                     "title": "Jajaja",
                     "image": "https://as1.ftcdn.net/v2/jpg/01/94/65/44/1000_F_194654449_bKzwXS3CGBARlX6nsZ6S4WiA9gdaKiQm.jpg",
-                    "comment" : " ",
+                    "link" : "https://www.jajajamexicana.com/",
                     "description": "Jajaja is a Mexican vegan restaurant. They offer mexican dishes with a vegan and modern twist. Their services are offered in four different locations in the city. It is great to go out at night and hangout."
-                },
+                }
+            ]
+        },
+        { 
+            "FRAN": [ 
                 { 
                     "id": 4,
-                    "term": "FRAN",
                     "title": "Franchia Vegan Cafe",
-                    "image": "https://i2.wp.com/www.franchia.com/wp-content/uploads/2016/07/3-1024x683.jpg?strip=info&w=2000",
-                    "comment": " ",
+                    "image": "https://nyandabout.com/wp-content/uploads/2018/01/9fbf96_78d895a72efb4ee3912c29553c7544f2mv2_d_2940_1960_s_2.jpg",
+                    "link": "https://franchia.com/",
                     "description": "Franchia is a Korean based vegan restaurant. Their menu offers variety of options from curries, appetizers, and desserts. They also offer variety of drinks including teas. They have impeccable interior and great food. "    
-                },
+                }
+            ]
+        },
+        { 
+            "REDBAM" : [ 
                 { 
                     "id": 5,
-                    "term": "REDBAM",
                     "title" : "Red Bamboo",
                     "image": "https://nyandabout.com/wp-content/uploads/2018/01/9fbf96_78d895a72efb4ee3912c29553c7544f2mv2_d_2940_1960_s_2.jpg",
-                    "comment" : " ",
+                    "link" : "https://www.redbamboo-nyc.com/",
                     "description" : "Red Bamboo is an asian based vegan food resturant. Their seating area is small but it makes up for their great food. they do not take reservations, it is first come first served. They also carry mocktail."
                 }
-     
+            ]
+        }
+        
     ]
 }
