@@ -1,4 +1,4 @@
-fetch("http://localhost:3001/restaurants")
+fetch(" http://localhost:3000/restaurants")
 .then(response => response.json())
 //.then(restaurants => constructRestaurantElements(restaurants))
 .then(restaurants => { 

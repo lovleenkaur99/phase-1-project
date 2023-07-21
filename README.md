@@ -1,1 +1,1 @@
-# My Favorite Vegan Spots
+# Vegan Spots
