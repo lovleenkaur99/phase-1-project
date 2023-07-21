@@ -1,5 +1,5 @@
 body { 
-  background-color: black;
+  background-color: plum;
 }
 
 h1 { 
@@ -12,8 +12,8 @@ img {
   width: 200px;
   height: 175px;
   border: 15px solid white;
-  padding: 35px;
-  margin: 20px;
+  padding: 10px;
+  margin: 10px;
 }
 
 .name { 
@@ -35,7 +35,7 @@ img {
 }
 
 .detail-image { 
-  float: right;
+  float: left;
   width: 200px;
   height: 200px;
 
