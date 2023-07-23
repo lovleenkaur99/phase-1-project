@@ -1,3 +1,11 @@
+// fetch("http://localhost:3000/restaurants")
+//   .then(response => response.json())
+//   .then(restaurants => {
+//     restaurants.forEach(restaurant => {
+//       renderRestaurants(restaurant)
+//     })
+
+
 fetch(" http://localhost:3000/restaurants")
 .then(response => response.json())
 //.then(restaurants => constructRestaurantElements(restaurants))
