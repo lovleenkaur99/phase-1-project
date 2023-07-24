@@ -62,14 +62,19 @@ function showRestaurantDetail(restaurant) {
   const description = document.querySelector('.description');
   description.textContent = restaurant.description;
 
-  const button = document.querySelector('#button')
-  button.textContent = `${restaurant.likes} Likes`
+  const button = document.querySelector('.btn')
+  const likeCount = document.querySelector('.glow-on-hover')
+  likeCount.textContent = `${restaurant.likes} Likes`
+  
 
   
-  button.addEventListener('click', () => { 
+  likeCount.addEventListener('click', () => { 
     restaurant.likes += 1
-    button.textContent = `${restaurant.likes} Likes`
+    likeCount.textContent = `${restaurant.likes} Likes`
   })
+
+
+
 
   // Show the corresponding food details based on the restaurant id
   // const foodData = foodsData[restaurant.id];
