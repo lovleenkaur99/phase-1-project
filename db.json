@@ -5,82 +5,41 @@
       "term": "BESU",
       "title": "Beyond Sushi",
       "image": "https://beyondsushi.com/wp-content/uploads/2021/03/Beyond-Sushi-logo-4.png",
-      "comment": " ",
-      "description": "Beyond Sushi is a vegan culinary wonderland, offering a delightful variety of plant-based sushi and other dishes. The Fried Chick'n Bao is a standout favorite, boasting perfectly seasoned mock chicken in a steamed bun. The Rainbow Roll is a dazzling creation, bursting with vibrant vegetables and captivating flavors. The restaurant's welcoming staff ensures a memorable and enjoyable dining experience. A must-visit for food enthusiasts seeking a scrumptious and ethical feast."
+      "description": "Beyond Sushi is a vegan culinary wonderland, offering a delightful variety of plant-based sushi and other dishes. The Fried Chick'n Bao is a standout favorite, boasting perfectly seasoned mock chicken in a steamed bun. The Rainbow Roll is a dazzling creation, bursting with vibrant vegetables and captivating flavors. The restaurant's welcoming staff ensures a memorable and enjoyable dining experience. A must-visit for food enthusiasts seeking a scrumptious and ethical feast.",
+      "likes" : 800
+      
     },
     {
       "id": 2,
       "term": "HANG",
       "title": "HanGawi",
       "image": "https://sp-ao.shortpixel.ai/client/q_lossy,ret_img,w_300/http://hangawirestaurant.com/wp-content/uploads/2023/03/Doc1-removebg-preview-1-e1685643069598-300x110.png",
-      "comment": " ",
-      "description": "HanGawi, a Korean vegan hotspot, envelops diners in a unique atmosphere, setting it apart from others. Their menu boasts traditional teas and dishes, with friendly staff always ready to guide newcomers. Due to its popularity, reservations are highly recommended. Don't miss their delightful Mongolian hot pot, an interactive and aromatic culinary experience. A must-visit destination for those seeking extraordinary vegan delights."
+      "description": "HanGawi, a Korean vegan hotspot, envelops diners in a unique atmosphere, setting it apart from others. Their menu boasts traditional teas and dishes, with friendly staff always ready to guide newcomers. Due to its popularity, reservations are highly recommended. Don't miss their delightful Mongolian hot pot, an interactive and aromatic culinary experience. A must-visit destination for those seeking extraordinary vegan delights.",
+      "likes" : 800
     },
     {
       "id": 3,
       "term": "JAJA",
       "title": "Jajaja",
       "image": "https://static.wixstatic.com/media/44eecf_d54a923779b246efbfebea885a397043~mv2.png/v1/fill/w_240,h_252,al_c,q_85,usm_2.00_1.00_0.00,enc_auto/44eecf_d54a923779b246efbfebea885a397043~mv2.png",
-      "comment": " ",
-      "description": "Jajaja is a Mexican vegan gem with a modern twist, enchanting food enthusiasts across four city locations. Their Faux Chorizo Laden Nachos redefine indulgence, blending bold flavors with compassionate ingredients. An unforgettable night out awaits, as Jajaja's vibrant ambiance and exquisite cuisine captivate all who visit."
+      "description": "Jajaja is a Mexican vegan gem with a modern twist, enchanting food enthusiasts across four city locations. Their Faux Chorizo Laden Nachos redefine indulgence, blending bold flavors with compassionate ingredients. An unforgettable night out awaits, as Jajaja's vibrant ambiance and exquisite cuisine captivate all who visit.",
+      "likes" : 1000
     },
     {
       "id": 4,
       "term": "FRAN",
       "title": "Franchia Vegan Cafe",
       "image": "https://franchia.com/wp-content/uploads/2016/07/cropped-cropped-2022logo_Final_green.png",
-      "comment": " ",
-      "description": "Franchia, a Korean-based vegan haven, offers a diverse menu with delightful curries, appetizers, desserts, and an array of teas. The Vegan Chirashi Bowl is a visual and flavorful masterpiece. With impeccable interiors and scrumptious food, Franchia promises an unforgettable dining experience. "
+      "description": "Franchia, a Korean-based vegan haven, offers a diverse menu with delightful curries, appetizers, desserts, and an array of teas. The Vegan Chirashi Bowl is a visual and flavorful masterpiece. With impeccable interiors and scrumptious food, Franchia promises an unforgettable dining experience. ",
+      "likes" : 500
     },
     {
       "id": 5,
       "term": "REDBAM",
       "title": "Red Bamboo",
       "image": "https://red-bamboo.square.site/uploads/b/d24f7aea2870caf6694face3c463ca3eb15a950069583798f04b947216517ab8/RedBamboo%20Logo%201%20white%20(1)_1596743651.jpg?width=400&optimize=medium",
-      "comment": " ",
-      "description": "Red Bamboo, an Asian-based vegan paradise, charms with great food in a cozy setting. No reservations, first-come-first-served. Don't miss their Barbecue Buffalo Wings and delightful Asian Steamed Dumplings. Mocktails add to the experience, making it a must-visit destination for plant-based food enthusiasts."
-    }
-  ],
-  "foods": [
-    {
-      "id": 6,
-      "term": "BESUFOOD",
-      "title": "Rainbow Roll",
-      "image": "https://beyondsushi.com/wp-content/uploads/2022/12/IMG_4198.jpg",
-      "comment": " ",
-      "description": "Beyond Sushi is a vegan culinary wonderland, offering a delightful variety of plant-based sushi and other dishes. The Fried Chick'n Bao is a standout favorite, boasting perfectly seasoned mock chicken in a steamed bun. The Rainbow Roll is a dazzling creation, bursting with vibrant vegetables and captivating flavors. The restaurant's welcoming staff ensures a memorable and enjoyable dining experience. A must-visit for food enthusiasts seeking a scrumptious and ethical feast."
-    },
-    {
-      "id": 7,
-      "term": "HANGFOOD",
-      "title": "Mongolian Hot Pot",
-      "image": "https://www.ablogvoyage.com/wp-content/uploads/2020/06/Hangawi_007.jpg",
-      "comment": " ",
-      "description": "HanGawi, a Korean vegan hotspot, envelops diners in a unique atmosphere, setting it apart from others. Their menu boasts traditional teas and dishes, with friendly staff always ready to guide newcomers. Due to its popularity, reservations are highly recommended. Don't miss their delightful Mongolian hot pot, an interactive and aromatic culinary experience. A must-visit destination for those seeking extraordinary vegan delights."
-    },
-    {
-      "id": 8,
-      "term": "JAJAFOOD",
-      "title": "The Faux Chorizo Laden Nachos",
-      "image": "https://static.urbandaddy.com/uploads/assets/image/articles/standard/f5365651de73e8da96fa5ed0df6fe03b.jpg",
-      "comment": " ",
-      "description": "Jajaja is a Mexican vegan gem with a modern twist, enchanting food enthusiasts across four city locations. Their Faux Chorizo Laden Nachos redefine indulgence, blending bold flavors with compassionate ingredients. An unforgettable night out awaits, as Jajaja's vibrant ambiance and exquisite cuisine captivate all who visit."
-    },
-    {
-      "id": 9,
-      "term": "FRANFOOD",
-      "title": "Vegan Chirashi Bowl",
-      "image": "https://images.happycow.net/venues/1024/22/65/hcmp2265_1220079.jpeg",
-      "comment": " ",
-      "description": "Franchia, a Korean-based vegan haven, offers a diverse menu with delightful curries, appetizers, desserts, and an array of teas. The Vegan Chirashi Bowl is a visual and flavorful masterpiece. With impeccable interiors and scrumptious food, Franchia promises an unforgettable dining experience. "
-    },
-    {
-      "id": 10,
-      "term": "REDBAMFOOD",
-      "title": "Barbecue Buffalo Wings and Asain Steamed Dumplings",
-      "image": "https://nyandabout.com/wp-content/uploads/2018/01/F64A7539.jpg",
-      "comment": " ",
-      "description": "Red Bamboo, an Asian-based vegan paradise, charms with great food in a cozy setting. No reservations, first-come-first-served. Don't miss their Barbecue Buffalo Wings and delightful Asian Steamed Dumplings. Mocktails add to the experience, making it a must-visit destination for plant-based food enthusiasts."
+      "description": "Red Bamboo, an Asian-based vegan paradise, charms with great food in a cozy setting. No reservations, first-come-first-served. Don't miss their Barbecue Buffalo Wings and delightful Asian Steamed Dumplings. Mocktails add to the experience, making it a must-visit destination for plant-based food enthusiasts.",
+      "likes" : 700
     }
   ]
 }
