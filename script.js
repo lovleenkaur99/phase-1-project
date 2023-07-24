@@ -22,13 +22,13 @@ const foodsData = {
   },
   3: {
     id: 8,
-    title: "Franchia Cafe",
+    title: "JaJaJa Mexicana",
     image: "https://static.urbandaddy.com/uploads/assets/image/articles/standard/f5365651de73e8da96fa5ed0df6fe03b.jpg",
     description: "Jajaja is a Mexican vegan gem with a modern twist, enchanting food enthusiasts across four city locations. Their Faux Chorizo Laden Nachos (IMAGE) redefine indulgence, blending bold flavors with compassionate ingredients. An unforgettable night out awaits, as Jajaja's vibrant ambiance and exquisite cuisine captivate all who visit.",
   },
   4: {
     id: 9,
-    title: "JaJaJa Mexicana",
+    title: "Franchia Cafe",
     image: "https://images.happycow.net/venues/1024/22/65/hcmp2265_1220079.jpeg",
     description: "Franchia, a Korean-based vegan haven, offers a diverse menu with delightful curries, appetizers, desserts, and an array of teas. The Vegan Chirashi Bowl (IMAGE) is a visual and flavorful masterpiece. With impeccable interiors and scrumptious food, Franchia promises an unforgettable dining experience.",
   },
