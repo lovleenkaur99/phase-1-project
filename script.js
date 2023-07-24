@@ -63,7 +63,7 @@ function showRestaurantDetail(restaurant) {
   description.textContent = restaurant.description;
 
   const comment = document.querySelector('#restaurant-comment');
-  comment.textContent = restaurant.comment;
+  // comment.textContent = restaurant.comment;
 
   // Show the corresponding food details based on the restaurant id
   const foodData = foodsData[restaurant.id];
@@ -76,56 +76,73 @@ function showRestaurantDetail(restaurant) {
   const foodImage = document.querySelector('#restaurant-detail .detail-image');
   foodImage.src = foodData.image;
 }
-// function showRestaurantDetail(restaurant) {
-//   const image = document.querySelector('.detail-image');
-//   image.src = restaurant.image;
+function showRestaurantDetail(restaurant) {
+  const image = document.querySelector('.detail-image');
+  image.src = restaurant.image;
 
-//   const name = document.querySelector('.name');
-//   name.textContent = restaurant.title;
+  const name = document.querySelector('.name');
+  name.textContent = restaurant.title;
 
-//   const description = document.querySelector('.description');
-//   description.textContent = restaurant.description;
+  const description = document.querySelector('.description');
+  description.textContent = restaurant.description;
 
-//   const comment = document.querySelector('#restaurant-comment');
-//   comment.textContent = restaurant.comment;
+  const comment = document.querySelector('#restaurant-comment');
+  comment.textContent = restaurant.comment;
 
-//   // Show the corresponding food details based on the restaurant id
-//   const foodData = foodsData[restaurant.id];
-//   const foodName = document.querySelector('#restaurant-detail .name');
-//   foodName.textContent = foodData.title;
+  // Show the corresponding food details based on the restaurant id
+  const foodData = foodsData[restaurant.id];
+  const foodName = document.querySelector('#restaurant-detail .name');
+  foodName.textContent = foodData.title;
 
-//   const foodDescription = document.querySelector('#restaurant-detail .description');
-//   foodDescription.textContent = foodData.description;
+  const foodDescription = document.querySelector('#restaurant-detail .description');
+  foodDescription.textContent = foodData.description;
 
-//   const foodImage = document.querySelector('#restaurant-detail .detail-image');
-//   foodImage.src = foodData.image;
+  const foodImage = document.querySelector('#restaurant-detail .detail-image');
+  foodImage.src = foodData.image;
 
-//   // Clear the comment display
-//   const commentDisplay = document.querySelector('#comment-display');
-//   commentDisplay.innerHTML = '';
+  // Clear the comment display
+  const commentDisplay = document.querySelector('#comment-display');
 
-//   // Display the comments if available
-//   if (restaurant.comment && restaurant.comment.trim() !== '') {
-//     const commentElement = document.createElement('p');
-//     commentElement.textContent = restaurant.comment;
-//     commentDisplay.appendChild(commentElement);
-//   }
 
-//   // Add an event listener to the comment form
-//   const commentForm = document.querySelector('#restaurant-comment');
-//   commentForm.addEventListener('submit', function (event) {
-//     event.preventDefault(); // Prevent the default form submission behavior
-//     const newComment = document.querySelector('#new-comment').value;
+  // Display the comments if available
+  if (restaurant.comment && restaurant.comment.trim() !== '') {
+    const commentElement = document.createElement('p');
+    commentElement.textContent = restaurant.comment;
+    commentDisplay.appendChild(commentElement);
+  }
 
-//     // Display the new comment
-//     const commentDisplay = document.querySelector('#comment-display');
-//     const commentElement = document.createElement('p');
-//     commentElement.textContent = newComment;
-//     commentDisplay.insertBefore(commentElement, commentDisplay.firstChild);
+  // Add an event listener to the comment form
+  const commentForm = document.querySelector('#restaurant-comment');
+  commentForm.addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+    const newComment = document.querySelector('#new-comment').value;
 
-//     // Clear the comment input field after adding the comment
-//     document.querySelector('#new-comment').value = '';
-//   });
+    // Display the new comment
+    const commentDisplay = document.querySelector('#comment-display');
+    const commentElement = document.createElement('p');
+    commentElement.textContent = newComment;
+    commentDisplay.insertBefore(commentElement, commentDisplay.firstChild);
+
+    // Clear the comment input field after adding the comment
+    document.querySelector('#new-comment').value = '';
+  });
+
+  const OPTIONS = { 
+    method : "PUSH",
+    headers : { 
+      "Accpet": "application/json",
+      "Content-type" : "application/json"
+    },
+    body : JSON.stringify({ 
+      content : commentDisplay
+    })
+  }
+  
+  fetch('http://localhost:3000/restaurants', OPTIONS)
+  .then(response => response.json())
+  .then(commentData => {
+    console.log(commentData)
+    commentDisplay(commentData.content)})
 
 
 
@@ -195,6 +212,4 @@ function showRestaurantDetail(restaurant) {
 //   const dislikeCounter = document.querySelector('#dislike-counter');
 //   likeCounter.dataset.likeCounter = restaurant.id;
 //   dislikeCounter.dataset.dislikeCounter = restaurant.id;
-// }}
-// })
-//   })
+}
