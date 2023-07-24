@@ -62,8 +62,7 @@ function showRestaurantDetail(restaurant) {
   const description = document.querySelector('.description');
   description.textContent = restaurant.description;
 
-  const comment = document.querySelector('#restaurant-comment');
-  // comment.textContent = restaurant.comment;
+  
 
   // Show the corresponding food details based on the restaurant id
   const foodData = foodsData[restaurant.id];
@@ -86,10 +85,6 @@ function showRestaurantDetail(restaurant) {
   const description = document.querySelector('.description');
   description.textContent = restaurant.description;
 
-  const comment = document.querySelector('#restaurant-comment');
-  comment.textContent = restaurant.comment;
-
-  // Show the corresponding food details based on the restaurant id
   const foodData = foodsData[restaurant.id];
   const foodName = document.querySelector('#restaurant-detail .name');
   foodName.textContent = foodData.title;
@@ -100,49 +95,100 @@ function showRestaurantDetail(restaurant) {
   const foodImage = document.querySelector('#restaurant-detail .detail-image');
   foodImage.src = foodData.image;
 
-  // Clear the comment display
-  const commentDisplay = document.querySelector('#comment-display');
-
-
-  // Display the comments if available
-  if (restaurant.comment && restaurant.comment.trim() !== '') {
-    const commentElement = document.createElement('p');
-    commentElement.textContent = restaurant.comment;
-    commentDisplay.appendChild(commentElement);
-  }
-
-  // Add an event listener to the comment form
-  const commentForm = document.querySelector('#restaurant-comment');
-  commentForm.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission behavior
-    const newComment = document.querySelector('#new-comment').value;
-
-    const OPTIONS = { 
-      method : "POST",
-      headers : { 
-        "Accpet": "application/json",
-        "Content-Type" : "application/json"
-      },
-      body : JSON.stringify({ 
-        content : newComment
-      })
+function newRestaurant(form) { 
+  const newForm = document.querySelector('#new-restaurant')
+  newForm.addEventListener('submit', (e) => { 
+    e.preventDefault();
+    const newTitle = e.target['new-title'].value
+    const newImage = e.target['new-image'].value
+    const newDescription = e.target['new-description'].value
+    const newValue = { 
+      "title" : newTitle,
+      "image": newImage,
+      "description": newDescription
     }
-    
-    fetch("http://localhost:3000/restaurants", OPTIONS)
-    .then(response => response.json())
-    .then(commentData => {
-      console.log(commentData)
-      newComment(commentData.content)})
-      
-    // Display the new comment
-    const commentDisplay = document.querySelector('#comment-display');
-    const commentElement = document.createElement('p');
-    commentElement.textContent = newComment;
-    commentDisplay.insertBefore(commentElement, commentDisplay.firstChild);
+    showRestaurantDetail(newValue)
+  })
+}
+  
+newRestaurant()
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  // Clear the comment display
+  // const commentDisplay = document.querySelector('#comment-display');
 
-    // Clear the comment input field after adding the comment
-    document.querySelector('#new-comment').value = '';
-  });
+
+  // // Display the comments if available
+  // if (restaurant.comment && restaurant.comment.trim() !== '') {
+  //   const commentElement = document.querySelector('.comments');
+  //   commentElement.textContent = restaurant.comment;
+  //   commentDisplay.appendChild(commentElement);
+  // }
+
+  // // Add an event listener to the comment form
+  // const commentForm = document.querySelector('#restaurant-comment');
+  // commentForm.addEventListener('submit', function (event) {
+  //   event.preventDefault(); // Prevent the default form submission behavior
+  //   const newComment = document.querySelector('#new-comment').value;
+
+    
+  //   // Display the new comment
+  //   const commentDisplay = document.querySelector('#comment-display');
+  //   const commentElement = document.querySelector('.comments');
+  //   commentDisplay.append(commentElement)
+  //   commentElement.textContent = newComment;
+  //   commentDisplay.insertBefore(commentElement, commentDisplay.firstChild);
+    
+    // const OPTIONS = { 
+    //   method : "POST",
+    //   headers : { 
+    //     "Accept": "application/json",
+    //     "Content-Type" : "application/json"
+    //   },
+    //   body : JSON.stringify({ 
+    //     title : "",
+    //     image : " ",
+    //     description : " "
+    //   })
+    // }
+    
+    // fetch("http://localhost:3000/restaurants", OPTIONS)
+    // .then(response => response.json())
+    
+    // // Clear the comment input field after adding the comment
+    // document.querySelector('#new-comment').value = '';
+
 
   
 
