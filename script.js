@@ -87,13 +87,13 @@ function showRestaurantDetail(restaurant) {
 
   const foodData = foodsData[restaurant.id];
   const foodName = document.querySelector('#restaurant-detail .name');
-  foodName.textContent = foodData.title;
+  // foodName.textContent = foodData.title;
 
   const foodDescription = document.querySelector('#restaurant-detail .description');
-  foodDescription.textContent = foodData.description;
+  // foodDescription.textContent = foodData.description;
 
   const foodImage = document.querySelector('#restaurant-detail .detail-image');
-  foodImage.src = foodData.image;
+  // foodImage.src = foodData.image;
 
 function newRestaurant(form) { 
   const newForm = document.querySelector('#new-restaurant')
@@ -107,7 +107,7 @@ function newRestaurant(form) {
       "image": newImage,
       "description": newDescription
     }
-    showRestaurantDetail(newValue)
+    renderRestaurants(newValue)
   })
 }
   
