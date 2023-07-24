@@ -3,9 +3,9 @@ fetch("http://localhost:3000/restaurants")
   .then(restaurants => {
     restaurants.forEach(restaurant => {
       renderRestaurants(restaurant)
-    
+    })
     showRestaurantDetail(restaurants[0])
-  
+  })
 
 const foodsData = {
   1: {
@@ -75,102 +75,126 @@ function showRestaurantDetail(restaurant) {
 
   const foodImage = document.querySelector('#restaurant-detail .detail-image');
   foodImage.src = foodData.image;
-
-  // Clear the comment display
-  const commentDisplay = document.querySelector('#comment-display');
-  commentDisplay.innerHTML = '';
-
-  // Display the comments if available
-  if (restaurant.comment && restaurant.comment.trim() !== '') {
-    const commentElement = document.createElement('p');
-    commentElement.textContent = restaurant.comment;
-    commentDisplay.appendChild(commentElement);
-  }
-
-  // Add an event listener to the comment form
-  const commentForm = document.querySelector('#restaurant-comment');
-  commentForm.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission behavior
-    const newComment = document.querySelector('#new-comment').value;
-
-    // Display the new comment
-    const commentDisplay = document.querySelector('#comment-display');
-    const commentElement = document.createElement('p');
-    commentElement.textContent = newComment;
-    commentDisplay.insertBefore(commentElement, commentDisplay.firstChild);
-
-    // Clear the comment input field after adding the comment
-    document.querySelector('#new-comment').value = '';
-  });
-
-
-
-function renderLikeDislikeButtons(restaurant) {
-  const likeButton = document.createElement('button');
-  likeButton.textContent = 'Like';
-  likeButton.addEventListener('click', () => {
-    increaseLikeCounter(restaurant);
-  });
-
-  const dislikeButton = document.createElement('button');
-  dislikeButton.textContent = 'Dislike';
-  dislikeButton.addEventListener('click', () => {
-    increaseDislikeCounter(restaurant);
-  });
-
-  const likeCounter = document.createElement('span');
-  likeCounter.textContent = 'Likes: 0';
-
-  const dislikeCounter = document.createElement('span');
-  dislikeCounter.textContent = 'Dislikes: 0';
-
-  const likeDislikeDiv = document.createElement('div');
-  likeDislikeDiv.appendChild(likeButton);
-  likeDislikeDiv.appendChild(likeCounter);
-  likeDislikeDiv.appendChild(dislikeButton);
-  likeDislikeDiv.appendChild(dislikeCounter);
-
-  const restaurantDetail = document.querySelector('#restaurant-detail');
-  restaurantDetail.appendChild(likeDislikeDiv);
 }
+// function showRestaurantDetail(restaurant) {
+//   const image = document.querySelector('.detail-image');
+//   image.src = restaurant.image;
 
-let likeCounters = {};
-let dislikeCounters = {};
+//   const name = document.querySelector('.name');
+//   name.textContent = restaurant.title;
 
-function increaseLikeCounter(restaurant) {
-  if (!likeCounters[restaurant.id]) {
-    likeCounters[restaurant.id] = 1;
-  } else {
-    likeCounters[restaurant.id]++;
-  }
-  updateLikeDislikeCounters(restaurant);
-}
+//   const description = document.querySelector('.description');
+//   description.textContent = restaurant.description;
 
-function increaseDislikeCounter(restaurant) {
-  if (!dislikeCounters[restaurant.id]) {
-    dislikeCounters[restaurant.id] = 1;
-  } else {
-    dislikeCounters[restaurant.id]++;
-  }
-  updateLikeDislikeCounters(restaurant);
-}
+//   const comment = document.querySelector('#restaurant-comment');
+//   comment.textContent = restaurant.comment;
 
-function updateLikeDislikeCounters(restaurant) {
-  const likeCounter = document.querySelector(`[data-like-counter="${restaurant.id}"]`);
-  const dislikeCounter = document.querySelector(`[data-dislike-counter="${restaurant.id}"]`);
+//   // Show the corresponding food details based on the restaurant id
+//   const foodData = foodsData[restaurant.id];
+//   const foodName = document.querySelector('#restaurant-detail .name');
+//   foodName.textContent = foodData.title;
 
-  likeCounter.textContent = `Likes: ${likeCounters[restaurant.id] || 0}`;
-  dislikeCounter.textContent = `Dislikes: ${dislikeCounters[restaurant.id] || 0}`;
-}
+//   const foodDescription = document.querySelector('#restaurant-detail .description');
+//   foodDescription.textContent = foodData.description;
 
-function showRestaurantDetail(restaurant) {
-  // Existing code...
+//   const foodImage = document.querySelector('#restaurant-detail .detail-image');
+//   foodImage.src = foodData.image;
 
-  // Add the restaurant id as data attributes to like and dislike counters
-  const likeCounter = document.querySelector('#like-counter');
-  const dislikeCounter = document.querySelector('#dislike-counter');
-  likeCounter.dataset.likeCounter = restaurant.id;
-  dislikeCounter.dataset.dislikeCounter = restaurant.id;
-}}
-})
-  })
+//   // Clear the comment display
+//   const commentDisplay = document.querySelector('#comment-display');
+//   commentDisplay.innerHTML = '';
+
+//   // Display the comments if available
+//   if (restaurant.comment && restaurant.comment.trim() !== '') {
+//     const commentElement = document.createElement('p');
+//     commentElement.textContent = restaurant.comment;
+//     commentDisplay.appendChild(commentElement);
+//   }
+
+//   // Add an event listener to the comment form
+//   const commentForm = document.querySelector('#restaurant-comment');
+//   commentForm.addEventListener('submit', function (event) {
+//     event.preventDefault(); // Prevent the default form submission behavior
+//     const newComment = document.querySelector('#new-comment').value;
+
+//     // Display the new comment
+//     const commentDisplay = document.querySelector('#comment-display');
+//     const commentElement = document.createElement('p');
+//     commentElement.textContent = newComment;
+//     commentDisplay.insertBefore(commentElement, commentDisplay.firstChild);
+
+//     // Clear the comment input field after adding the comment
+//     document.querySelector('#new-comment').value = '';
+//   });
+
+
+
+// function renderLikeDislikeButtons(restaurant) {
+//   const likeButton = document.createElement('button');
+//   likeButton.textContent = 'Like';
+//   likeButton.addEventListener('click', () => {
+//     increaseLikeCounter(restaurant);
+//   });
+
+//   const dislikeButton = document.createElement('button');
+//   dislikeButton.textContent = 'Dislike';
+//   dislikeButton.addEventListener('click', () => {
+//     increaseDislikeCounter(restaurant);
+//   });
+
+//   const likeCounter = document.createElement('span');
+//   likeCounter.textContent = 'Likes: 0';
+
+//   const dislikeCounter = document.createElement('span');
+//   dislikeCounter.textContent = 'Dislikes: 0';
+
+//   const likeDislikeDiv = document.createElement('div');
+//   likeDislikeDiv.appendChild(likeButton);
+//   likeDislikeDiv.appendChild(likeCounter);
+//   likeDislikeDiv.appendChild(dislikeButton);
+//   likeDislikeDiv.appendChild(dislikeCounter);
+
+//   const restaurantDetail = document.querySelector('#restaurant-detail');
+//   restaurantDetail.appendChild(likeDislikeDiv);
+// }
+
+// let likeCounters = {};
+// let dislikeCounters = {};
+
+// function increaseLikeCounter(restaurant) {
+//   if (!likeCounters[restaurant.id]) {
+//     likeCounters[restaurant.id] = 1;
+//   } else {
+//     likeCounters[restaurant.id]++;
+//   }
+//   updateLikeDislikeCounters(restaurant);
+// }
+
+// function increaseDislikeCounter(restaurant) {
+//   if (!dislikeCounters[restaurant.id]) {
+//     dislikeCounters[restaurant.id] = 1;
+//   } else {
+//     dislikeCounters[restaurant.id]++;
+//   }
+//   updateLikeDislikeCounters(restaurant);
+// }
+
+// function updateLikeDislikeCounters(restaurant) {
+//   const likeCounter = document.querySelector(`[data-like-counter="${restaurant.id}"]`);
+//   const dislikeCounter = document.querySelector(`[data-dislike-counter="${restaurant.id}"]`);
+
+//   likeCounter.textContent = `Likes: ${likeCounters[restaurant.id] || 0}`;
+//   dislikeCounter.textContent = `Dislikes: ${dislikeCounters[restaurant.id] || 0}`;
+// }
+
+// function showRestaurantDetail(restaurant) {
+//   // Existing code...
+
+//   // Add the restaurant id as data attributes to like and dislike counters
+//   const likeCounter = document.querySelector('#like-counter');
+//   const dislikeCounter = document.querySelector('#dislike-counter');
+//   likeCounter.dataset.likeCounter = restaurant.id;
+//   dislikeCounter.dataset.dislikeCounter = restaurant.id;
+// }}
+// })
+//   })
