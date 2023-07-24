@@ -63,6 +63,38 @@ h3 {
   font-family: 'Arial Rounded MT Bold';
   text-align: left;
 }
+/* Existing styles */
+
+#comment-box {
+  float: right;
+  width: 50%;
+  padding: 10px;
+}
+
+#restaurant-comment {
+  display: flex;
+  flex-direction: column;
+}
+
+#new-comment {
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+#comment-display p {
+  margin: 5px 0;
+}
+
+#like-dislike-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#like-counter,
+#dislike-counter {
+  font-size: 18px;
+}
 
 
 
