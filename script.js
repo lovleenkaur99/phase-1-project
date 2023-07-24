@@ -63,7 +63,7 @@ function showRestaurantDetail(restaurant) {
   description.textContent = restaurant.description;
 
   const button = document.querySelector('.btn')
-  const likeCount = document.querySelector('.glow-on-hover')
+  const likeCount = document.querySelector('.text')
   likeCount.textContent = `${restaurant.likes} Likes`
   
 
@@ -108,7 +108,7 @@ function showRestaurantDetail(restaurant) {
 //    foodImage.src = foodData.image;
 
 function newRestaurant(form) { 
-  const newForm = document.querySelector('#new-restaurant')
+  const newForm = document.querySelector('.form')
   newForm.addEventListener('submit', (e) => { 
     e.preventDefault();
     const newTitle = e.target['new-title'].value
