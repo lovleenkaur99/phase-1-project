@@ -117,6 +117,23 @@ function showRestaurantDetail(restaurant) {
     event.preventDefault(); // Prevent the default form submission behavior
     const newComment = document.querySelector('#new-comment').value;
 
+    const OPTIONS = { 
+      method : "POST",
+      headers : { 
+        "Accpet": "application/json",
+        "Content-Type" : "application/json"
+      },
+      body : JSON.stringify({ 
+        content : newComment
+      })
+    }
+    
+    fetch("http://localhost:3000/restaurants", OPTIONS)
+    .then(response => response.json())
+    .then(commentData => {
+      console.log(commentData)
+      newComment(commentData.content)})
+      
     // Display the new comment
     const commentDisplay = document.querySelector('#comment-display');
     const commentElement = document.createElement('p');
@@ -127,22 +144,7 @@ function showRestaurantDetail(restaurant) {
     document.querySelector('#new-comment').value = '';
   });
 
-  const OPTIONS = { 
-    method : "PUSH",
-    headers : { 
-      "Accpet": "application/json",
-      "Content-type" : "application/json"
-    },
-    body : JSON.stringify({ 
-      content : commentDisplay
-    })
-  }
   
-  fetch('http://localhost:3000/restaurants', OPTIONS)
-  .then(response => response.json())
-  .then(commentData => {
-    console.log(commentData)
-    commentDisplay(commentData.content)})
 
 
 
