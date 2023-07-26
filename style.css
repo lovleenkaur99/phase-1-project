@@ -1,11 +1,12 @@
 body { 
-  background: #F6E6CF;
+  background: #deb377;
       
 
 }
 
 h1 { 
-  color : #8CBD62;
+  
+  color : #ffffff;
   font-size: 80px;
   text-align: center;
   font-family: 'Arial Rounded MT Bold Italics';
@@ -25,7 +26,7 @@ img {
 }
 
 .name { 
-  color: #8CBD62;
+  color: #ffffff;
   text-align: center;
   font-size: 35px;
   font-family: 'Arial Rounded MT Bold';
@@ -33,7 +34,7 @@ img {
 }
 
 .description { 
-  color: #2C121B;
+  color: #ffffff;
   text-align: center;
   padding-left: 150px;
   padding-right: 150px;
@@ -65,7 +66,7 @@ input[type=submit] {
 }
 
 h3 { 
-  color: #8CBD62;
+  color: #ffffff;
   font-size: 40px;
   font-family: 'Arial Rounded MT Bold';
   text-align: left;
@@ -153,7 +154,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 12px;
-  background: #FBD3B7;
+  background: #FFD8A8;
   cursor: pointer;
   transition: all 450ms ease-in-out;
   
@@ -171,7 +172,7 @@ body {
 }
 
 .btn:hover {
-  background: linear-gradient(0deg,#F6E6CF,#FFC16A);
+  background: linear-gradient(0deg,#FFD8A8,#FFD8A8);
   box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
   inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
   0px 0px 0px 4px rgba(255, 255, 255, 0.2),
@@ -196,7 +197,7 @@ body {
   align-content: center;
   font-size: larger;
   font-family: Arial, Helvetica, sans-serif;
-  color: #8CBD62;
+  color: #ffffff;
 }
 
 .button { 
@@ -208,7 +209,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 12px;
-  background: #FBD3B7;
+  background: #FFD8A8;
   cursor: pointer;
   transition: all 450ms ease-in-out;
 }
@@ -225,11 +226,11 @@ body {
 }
 
 .button:hover {
-  background: linear-gradient(0deg,#F6E6CF,#FFC16A);
+  background: linear-gradient(0deg,#FFD8A8,#FFD8A8);
   box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
   inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
   0px 0px 0px 4px rgba(255, 255, 255, 0.2),
-  0px 0px 180px 0px #F6E6CF;
+  0px 0px 180px 0px #FFD8A8;
   transform: translateY(-2px);
 }
 
