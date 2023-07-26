@@ -1,7 +1,5 @@
 body { 
-  background: #5c4e56;
-      
-
+  background-image: url(file:///Users/lovleenkaur/Downloads/layered-waves-haikei.svg);
 }
 
 h1 { 
@@ -40,7 +38,7 @@ img {
 .name { 
   color: #aeadc8;
   text-align: center;
-  font-size: 35px;
+  font-size: 45px;
   font-family: 'Arial Rounded MT Bold';
   ;
 }
@@ -179,7 +177,7 @@ h3 {
 
 .button { 
   border: none;
-  width: 15em;
+  width: 10em;
   height: 5em;
   border-radius: 3em;
   display: flex;
@@ -225,7 +223,15 @@ h3 {
   color:#737373;
 }
 
-/* ----------------------h1-------------------------- */
+.new-restaurant {
+  width: 50vw;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 
 
 
