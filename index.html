@@ -10,10 +10,10 @@
 <body>
   <header>
     <h1>
-      
-        NYC Best Vegan Spots
-     
-  </h1>
+      <div class="glitch-wrapper">
+        <div class="glitch" data-glitch="glitch">NYC Best Vegan Spots</div>
+      </div>
+    </h1>
   </header>
 
   <div id="restaurant-display">
@@ -24,54 +24,53 @@
     <img class="detail-image" src="" alt="I" />
     <h2 class="name"></h2>
     <h3 class="description"></h3>
-    
-    
-    
-    <div id="like-dislike-container">
-      <span id="like-counter" data-like-counter=""></span>
-      <span id="dislike-counter" data-dislike-counter=""></span>
-  </div>
 
-  
+
 
   </div>
-
 
   <button class="btn">
+    <div id="like-dislike-container">
+      <span class="text"></span>
+    </div>
     <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
-        <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
+      <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
     </svg>
+    <span class="textOne"></span>
+  </button>
 
-    <span class="text"></span>
-</button>
+  <h3>Add New Restaurant:</h3>
 
-<h3>Add New Restaurant:</h3>
-  
+
   <div class="new-restaurant">
     <form class="form">
-      
+
       <div class="form-group">
         <label for="new-title">Title</label>
-        <textarea type="new-title" id="new-title" name="new-title" required=""> </textarea>
+        <textarea type="new-title" id="new-title" name="new-title" required=""></textarea>
       </div>
-      
+
       <div class="form-group">
         <label for="new-image">Image URL</label>
-        <textarea name="new-image" id="new-image" required="">          </textarea>
+        <textarea name="new-image" id="new-image" required=""></textarea>
       </div>
-      
+
+      <div class="form-group">
+        <label for="new-alternateImage">Alternate Image URL</label>
+        <textarea name="new-alternateImage" id="new-alternateImage" required=""></textarea>
+      </div>
+
       <div class="form-group">
         <label for="new-description">Description</label>
-        <textarea name="new-description" id="new-description" required="">          </textarea>
+        <textarea name="new-description" id="new-description" required=""></textarea>
       </div>
-      
+
       <button class="button">Submit
         <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkes">
-            <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
+          <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
         </svg>
-    
         <span class="textOne"></span>
-    </button>
+      </button> 
 
     </form>
   </div>

@@ -1,31 +1,44 @@
 body { 
-  background: #F6E6CF;
+  background: #5c4e56;
       
 
 }
 
 h1 { 
-  color : #8CBD62;
+  
+  color : #fffdf8;
   font-size: 80px;
   text-align: center;
   font-family: 'Arial Rounded MT Bold Italics';
 }
 
+.restaurant-display { 
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 img { 
+  size: 50px;
   width: 300px;
   height: 200px;
-  border: 7px solid #F6E6CF;
+  border: 7px solid #aeadc8;
   padding: 10px;
   margin: 10px;
-  border-radius: 50px;
-  background: #F6E6CF;
-  box-shadow:  -20px 20px 37px #FFD8A8,
-             20px -20px 37px #EEE7DF;
-  
+  border-radius: 41px;
+  background: linear-gradient(145deg, #62535c, #53464d);
+  box-shadow:  28px 28px 48px #4b4047,
+             -28px -28px 48px #6d5c65;
+}
+
+.restaurant-display { 
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
 }
 
 .name { 
-  color: #8CBD62;
+  color: #aeadc8;
   text-align: center;
   font-size: 35px;
   font-family: 'Arial Rounded MT Bold';
@@ -33,7 +46,7 @@ img {
 }
 
 .description { 
-  color: #2C121B;
+  color: #fffdf8;
   text-align: center;
   padding-left: 150px;
   padding-right: 150px;
@@ -65,7 +78,7 @@ input[type=submit] {
 }
 
 h3 { 
-  color: #8CBD62;
+  color: #fffdf8;
   font-size: 40px;
   font-family: 'Arial Rounded MT Bold';
   text-align: left;
@@ -106,6 +119,7 @@ h3 {
 
 /* ---------------------------- button-------------------  */
 .btn {
+  position: relative;
   border: none;
   width: 15em;
   height: 5em;
@@ -114,7 +128,7 @@ h3 {
   justify-content: center;
   align-items: center;
   gap: 12px;
-  background: #FBD3B7;
+  background: #fffdf8;
   cursor: pointer;
   transition: all 450ms ease-in-out;
   
@@ -132,7 +146,7 @@ h3 {
 }
 
 .btn:hover {
-  background: linear-gradient(0deg,#F6E6CF,#FFC16A);
+  background: linear-gradient(0deg,#aeadc8,#6f79a6);
   box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
   inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
   0px 0px 0px 4px rgba(255, 255, 255, 0.2),
@@ -151,13 +165,16 @@ h3 {
 
 /* ------------------------form-----------------------  */
 
+
 .new-restaurant .form-group { 
+  position: relative;
   width: 100px;
   height: 100px;
   align-content: center;
   font-size: larger;
   font-family: Arial, Helvetica, sans-serif;
-  color: #8CBD62;
+  color: #fffdf8;
+  
 }
 
 .button { 
@@ -169,7 +186,7 @@ h3 {
   justify-content: center;
   align-items: center;
   gap: 12px;
-  background: #FBD3B7;
+  background: #fffdf8;
   cursor: pointer;
   transition: all 450ms ease-in-out;
 }
@@ -186,11 +203,11 @@ h3 {
 }
 
 .button:hover {
-  background: linear-gradient(0deg,#F6E6CF,#FFC16A);
+  background: linear-gradient(0deg,#aeadc8,#6f79a6);
   box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
   inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
   0px 0px 0px 4px rgba(255, 255, 255, 0.2),
-  0px 0px 180px 0px #F6E6CF;
+  0px 0px 180px 0px #FFD8A8;
   transform: translateY(-2px);
 }
 
