@@ -263,6 +263,7 @@ h3 {
   height: var(--height);
   border: 2px solid var(--black);
   border-radius: 0 0 6px 6px;
+  float: right;
 }
 
 #trash-can::after, #trash-can::before {
