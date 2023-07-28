@@ -1,15 +1,43 @@
 document.addEventListener("DOMContentLoaded", () => {
   let restaurantsData = [];
-
+fetchRestaurants();
   // Fetch restaurant data from the server
   function fetchRestaurants() {
     return fetch("http://localhost:3000/restaurants")
       .then((response) => response.json())
+      .then(lists => renderRestaurants(lists)
+)
       .catch((error) => {
         console.error("Error fetching restaurants:", error);
         return []; // Return an empty array if fetch fails
       });
   }
+  // Trash can functionality
+  const trashCan = document.querySelector("#trash-can");
+
+  // Function to delete restaurant from the DOM and local storage
+  function deleteRestaurant(id) {
+    // Remove restaurant from the DOM
+    const restaurantImg = document.querySelector(`img[data-id="${id}"]`);
+    if (restaurantImg) {
+      restaurantImg.remove();
+    }
+
+    // Remove restaurant from local storage and update restaurantsData array
+    restaurantsData = restaurantsData.filter((restaurant) => restaurant.id !== id);
+    localStorage.setItem("restaurants", JSON.stringify(restaurantsData));
+  }
+
+  // Event listener for dragging restaurant image to the trash can
+  trashCan.addEventListener("dragover", (event) => {
+    event.preventDefault();
+  });
+
+  trashCan.addEventListener("drop", (event) => {
+    event.preventDefault();
+    const restaurantId = event.dataTransfer.getData("text/plain");
+    deleteRestaurant(parseInt(restaurantId));
+  });
 
   // Render restaurants and show the first restaurant detail
   function renderRestaurants(restaurants) {
@@ -19,12 +47,19 @@ document.addEventListener("DOMContentLoaded", () => {
       img.src = restaurant.image;
       img.dataset.id = restaurant.id;
       img.dataset.defaultImage = restaurant.image;
+      img.draggable = true;
+      img.addEventListener("dragstart", (event) => {
+        event.dataTransfer.setData("text/plain", event.target.dataset.id);
+      });
+
       img.addEventListener("mouseenter", () => {
         img.src = restaurant.alternateImage;
       });
+
       img.addEventListener("mouseleave", () => {
         img.src = img.dataset.defaultImage;
       });
+
       nav.appendChild(img);
 
       img.addEventListener("click", () => {
@@ -32,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+  
 
   function showRestaurantDetail(restaurant) {
     const image = document.querySelector(".detail-image");
@@ -57,14 +93,16 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     });
   }
-
   function updateLikesOnServer(restaurantId, likes) {
     const requestOptions = {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
+        "Accept": "application/json"
       },
-      body: JSON.stringify({ likes }),
+      body: JSON.stringify({
+        likes: likes
+      })
     };
 
     fetch(`http://localhost:3000/restaurants/${restaurantId}`, requestOptions)
@@ -72,7 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((data) => console.log(data)) // You can handle the server response if needed
       .catch((error) => console.error("Error updating likes:", error));
   }
-
   function newRestaurant() {
     const newForm = document.querySelector(".form");
     newForm.addEventListener("submit", (e) => {
@@ -81,12 +118,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const newImage = e.target["new-image"].value;
       const newDescription = e.target["new-description"].value;
       const newAlternateImage = e.target["new-alternateImage"].value;
+      const newAuthor = e.target["new-author"].value;
       const newValue = {
         id: Date.now(), // Generate a unique ID for the new restaurant
         title: newTitle,
         image: newImage,
         description: newDescription,
         alternateImage: newAlternateImage,
+        
         likes: 0,
       };
       renderRestaurants([newValue]);
