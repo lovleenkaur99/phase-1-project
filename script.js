@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   let restaurantsData = [];
+  let lastDeletedRestaurant = null;
 
   // Fetch restaurant data from the server
   function fetchRestaurants() {
@@ -10,11 +11,25 @@ document.addEventListener("DOMContentLoaded", () => {
         return []; // Return an empty array if fetch fails
       });
   }
+    // Function to update the restaurant likes count in the local storage
+    function updateLikesInLocalStorage(restaurantId, likes) {
+      const updatedRestaurantsData = restaurantsData.map((restaurant) =>
+        restaurant.id === restaurantId ? { ...restaurant, likes } : restaurant
+      );
+      localStorage.setItem("restaurants", JSON.stringify(updatedRestaurantsData));
+    }
+  
   // Trash can functionality
   const trashCan = document.querySelector("#trash-can");
 
-  // Function to delete restaurant from the DOM and local storage
   function deleteRestaurant(id) {
+    // Find the index of the restaurant to delete in the restaurantsData array
+    const deletedRestaurantIndex = restaurantsData.findIndex((restaurant) => restaurant.id === id);
+    if (deletedRestaurantIndex === -1) return; // Restaurant not found
+
+    // Store the deleted restaurant in the lastDeletedRestaurant variable
+    lastDeletedRestaurant = restaurantsData[deletedRestaurantIndex];
+
     // Remove restaurant from the DOM
     const restaurantImg = document.querySelector(`img[data-id="${id}"]`);
     if (restaurantImg) {
@@ -22,9 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Remove restaurant from local storage and update restaurantsData array
-    restaurantsData = restaurantsData.filter((restaurant) => restaurant.id !== id);
+    restaurantsData.splice(deletedRestaurantIndex, 1);
     localStorage.setItem("restaurants", JSON.stringify(restaurantsData));
   }
+
+  
 
   // Event listener for dragging restaurant image to the trash can
   trashCan.addEventListener("dragover", (event) => {
@@ -45,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
       img.src = restaurant.image;
       img.dataset.id = restaurant.id;
       img.dataset.defaultImage = restaurant.image;
+      
 
       // Drag and drop functionality for the restaurant images
       img.draggable = true;
@@ -64,9 +82,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
       img.addEventListener("click", () => {
         showRestaurantDetail(restaurant);
+        
       });
     });
   }
+// Implement the trash button click event to restore the last deleted restaurant
+trashCan.addEventListener("click", () => {
+  if (lastDeletedRestaurant) {
+    // Restore the last deleted restaurant back to the DOM
+    const nav = document.querySelector("#restaurant-display");
+    const img = document.createElement("img");
+    img.src = lastDeletedRestaurant.image;
+    img.dataset.id = lastDeletedRestaurant.id;
+    img.dataset.defaultImage = lastDeletedRestaurant.image;
+    img.draggable = true;
+
+    img.addEventListener("dragstart", (event) => {
+      event.dataTransfer.setData("text/plain", event.target.dataset.id);
+    });
+
+    img.addEventListener("mouseenter", () => {
+      img.src = lastDeletedRestaurant.alternateImage;
+    });
+
+    img.addEventListener("mouseleave", () => {
+      img.src = img.dataset.defaultImage;
+    });
+
+    img.addEventListener("click", () => {
+      showRestaurantDetail(lastDeletedRestaurant);
+    });
+
+    nav.appendChild(img);
+
+    // Add the restored restaurant data back to the restaurantsData array
+    restaurantsData.push(lastDeletedRestaurant);
+
+    // Reset lastDeletedRestaurant to null after restoring
+    lastDeletedRestaurant = null;
+
+    // Update the local storage and render the restaurant detail
+    localStorage.setItem("restaurants", JSON.stringify(restaurantsData));
+    showRestaurantDetail(img.dataset.id);
+  }
+});
+
+  
   
   function showRestaurantDetail(restaurant) {
     const image = document.querySelector(".detail-image");
@@ -135,6 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Check if there are any restaurants data in local storage
+
   const storedRestaurants = JSON.parse(localStorage.getItem("restaurants"));
   if (storedRestaurants && Array.isArray(storedRestaurants)) {
     restaurantsData = storedRestaurants;
@@ -147,10 +209,38 @@ document.addEventListener("DOMContentLoaded", () => {
         restaurantsData = fetchedRestaurants;
         renderRestaurants(restaurantsData);
         showRestaurantDetail(restaurantsData[0]);
+
+        // Save the fetched restaurant data to local storage
         localStorage.setItem("restaurants", JSON.stringify(restaurantsData));
       })
       .catch((error) => console.error("Error fetching restaurants:", error));
   }
+
+
+  function updateLikesInLocalStorage(restaurantId, likes) {
+    const updatedRestaurantsData = restaurantsData.map((restaurant) =>
+    restaurant.id === restaurantId ? { ...restaurant, likes } : restaurant
+    );
+    localStorage.setItem("restaurants", JSON.stringify(updatedRestaurantsData));
+  }
+  // const storedRestaurants = JSON.parse(localStorage.getItem("restaurants"));
+  // if (storedRestaurants && Array.isArray(storedRestaurants)) {
+  //   restaurantsData = storedRestaurants;
+  //   renderRestaurants(restaurantsData);
+  //   showRestaurantDetail(restaurantsData[0]);
+  // } else {
+  //   // Fetch restaurants if local storage is empty
+  //   fetchRestaurants()
+  //     .then((fetchedRestaurants) => {
+  //       restaurantsData = fetchedRestaurants;
+  //       renderRestaurants(restaurantsData);
+  //       showRestaurantDetail(restaurantsData[0]);
+
+  //       // Save the fetched restaurant data to local storage
+  //       localStorage.setItem("restaurants", JSON.stringify(restaurantsData));
+  //     })
+  //     .catch((error) => console.error("Error fetching restaurants:", error));
+  // }
 
   newRestaurant();
 });
