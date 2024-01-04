@@ -18,7 +18,10 @@ h1 {
 
 img { 
   size: 50px;
-  width: 300px;
+  width: 15%;
+  aspect-ratio: 4/3;
+  object-fit: contain;
+  
   height: 200px;
   border: 7px outset #aeadc8;
   padding: 10px;
